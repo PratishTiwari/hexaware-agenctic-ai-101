@@ -19,7 +19,7 @@ class PolicyAgent(BaseChatAgent):
     def produced_message_types(self) -> Sequence[type[BaseChatMessage]]:
         return (TextMessage,)
 
-    async def on_message(self, messages: Sequence[BaseChatMessage],
+    async def on_messages(self, messages: Sequence[BaseChatMessage],
                          calcenllation_token: CancellationToken) -> Response:
         text = " ".join(m.to_text() for m in messages).lower()
         amount = 0
@@ -53,7 +53,7 @@ team = RoundRobinGroupChat(
 
 async def main():
     await Console(team.run_stream(
-        task="customer once a refund of ₹10,000 for AR-4471 because the headphones arrived cracked. Decide the refund."))
+        task="customer wants a refund of ₹10,000 for AR-4471 because the headphones arrived cracked. Decide the refund."))
     await client.close()
 
 asyncio.run(main())
