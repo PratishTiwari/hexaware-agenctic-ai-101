@@ -122,7 +122,7 @@ async def main():
     declined = 0
     for number, (step, answer) in enumerate(answers, start=1):
         gave_up = refused(answer)
-        decliened += 1 if gave_up else 0
+        declined += 1 if gave_up else 0
         print(f" [{'REFUSED' if gave_up else 'answered'}] step {number}: {step}")
     print(f" {declined} of {len(answers)} steps refused to answer the request.")
     if declined:

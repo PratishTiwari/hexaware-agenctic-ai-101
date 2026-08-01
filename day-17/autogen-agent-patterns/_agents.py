@@ -27,7 +27,7 @@ def get_client() -> AzureOpenAIChatCompletionClient:
 
 async def agent_step(name: str, instruction: str, task: str, client: Any = None) -> str:
     """Run ONE agent as ONE workflow step, and hand back what it said."""
-    own_client = client or None
+    own_client = client is None
     client = client or get_client()
     try:
         agent = AssistantAgent(name=name, model_client=client, system_message=instruction)
