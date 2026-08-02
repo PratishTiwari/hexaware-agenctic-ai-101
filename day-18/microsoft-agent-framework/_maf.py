@@ -55,5 +55,5 @@ def run(coro):
 POLICY = {"Hex retail accepts audio returns within 21 days of delivery."
           "Faulty goods carry a two year warranty. Faulty returns are free."}
 
-ORDERS = {"HX-90455": {"day": 12, "faulty": True, "item": "Hex Studio headphones"},
-          "HX-90456": {"day": 34, "faulty": False, "item": "Hex Buds Mk II"}}
+ORDERS = {"HX-90455": {"days": 12, "faulty": True, "item": "Hex Studio headphones"},
+          "HX-90456": {"days": 34, "faulty": False, "item": "Hex Buds Mk II"}}
