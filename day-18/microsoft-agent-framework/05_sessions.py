@@ -20,7 +20,7 @@ async def main():
     history = [Message("user", ["My order is HX-90455. Remember it."]),
                Message("assistant", ["OK, I will remember that."]),
                Message("user", ["What is my order number?"])]
-    second = await agent.run("history")
+    second = await agent.run(history)
     print("Way 2 - carry the history in the messages list")
     print(f" remembered.    : {'YES' if 'HX-90455' in second.text else 'NO'} -> {second.text}")
     print()
