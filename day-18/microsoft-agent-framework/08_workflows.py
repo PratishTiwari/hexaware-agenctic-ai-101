@@ -29,5 +29,7 @@ async def main():
     for order_id in ("HX-90455", "HX-90456", "HX-90457"):
         result = await workflow.run(order_id)
         print(f" order {order_id} : {result.get_outputs()}")
-        print()
-        print(" Same graph, three inputs. The PATH never varied - we defined it. The agent never had to decide what to do next - we did that for it.")
+    print()
+    print(" Same graph, three inputs. The PATH never varied - we defined it. The agent never had to decide what to do next - we did that for it.")
+
+run(main())
